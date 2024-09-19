@@ -34,7 +34,7 @@ public class AccountStatusMiddleware : IMiddleware
 
                 var response = new
                 {
-                    isBlocking = true,
+                    isBlocked = true,
                     message = "Account has been deleted"
                 };
 

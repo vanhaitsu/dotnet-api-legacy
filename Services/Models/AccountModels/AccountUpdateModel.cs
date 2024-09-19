@@ -17,8 +17,8 @@ public class AccountUpdateModel
     [EnumDataType(typeof(Gender), ErrorMessage = "Invalid gender")]
     public Gender Gender { get; set; }
 
-    [Required(ErrorMessage = "Date of Birth is required")]
-    public DateTime DateOfBirth { get; set; }
+    [Required(ErrorMessage = "Date of birth is required")]
+    public DateOnly DateOfBirth { get; set; }
 
     public string? Address { get; set; }
     public string? Image { get; set; }

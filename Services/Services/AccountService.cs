@@ -388,7 +388,7 @@ namespace Services.Services
 
             var token = await _userManager.GeneratePasswordResetTokenAsync(user);
             // todo modify this Email body to send a URL redirect to the frontend page and contain the token as a parameter in the URL
-            await _emailService.SendEmailAsync(user.Email!, "Reset your Password",
+            await _emailService.SendEmailAsync(user.Email!, "Reset your password",
                 $"Your token is {token}. The token will expire in 15 minutes.", true);
 
             return new ResponseModel
@@ -669,9 +669,8 @@ namespace Services.Services
             );
 
             var accountModelList = _mapper.Map<List<AccountModel>>(accountList.Data);
-            return new Pagination<AccountModel>(accountModelList, accountList.TotalCount,
-                accountFilterModel.PageIndex,
-                accountFilterModel.PageSize);
+            return new Pagination<AccountModel>(accountModelList, accountFilterModel.PageIndex,
+                accountFilterModel.PageSize, accountList.TotalCount);
         }
 
         public async Task<ResponseModel> UpdateAccount(Guid id, AccountUpdateModel accountUpdateModel)
