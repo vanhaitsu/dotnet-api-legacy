@@ -590,7 +590,10 @@ namespace Services.Services
                     if (result.Succeeded)
                     {
                         // Add role
-                        await _userManager.AddToRoleAsync(user, Repositories.Enums.Role.User.ToString());
+                        await _userManager.AddToRoleAsync(user,
+                            accountRegisterModel.Role != null
+                                ? accountRegisterModel.Role.ToString()!
+                                : Repositories.Enums.Role.User.ToString());
 
                         // Email verification (disable this function if users are not required to verify their email)
                         // await SendVerificationEmail(user);
