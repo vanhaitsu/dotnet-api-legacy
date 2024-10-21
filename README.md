@@ -1,4 +1,4 @@
-# DotNetAPI
+# DotNetAPI (Legacy)
 
 ## Introduction
 This is a simple ASP.NET Core API using Identity and Microsoft SQL Server.
